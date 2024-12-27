@@ -119,6 +119,7 @@ export class CommentForm extends LitElement {
           ...getCaptchaCodeHeader(data.captchaCode),
         },
         body: JSON.stringify(commentRequest),
+        redirect: 'manual', // 禁止自动重定向
       });
 
       if (isRequireCaptcha(response)) {
@@ -128,9 +129,25 @@ export class CommentForm extends LitElement {
         return;
       }
 
-      this.baseFormRef.value?.handleFetchCaptcha();
 
+      this.baseFormRef.value?.handleFetchCaptcha();
+      // 处理服务端要求重定向的响应
+      console.log('-----------response.status----------', response.status);
       if (!response.ok) {
+        // 解析 JSON 错误响应
+        const errorData = await response.json();
+        console.log('-----------errorData----------', errorData);
+        // 如果有 redirectUrl，执行跳转
+        if (errorData.redirectUrl) {
+          //提示没有权限
+          this.toastManager?.warn(msg('This content is available to paid users only'));
+          //间隔2s跳转
+          setTimeout(() => {
+            window.location.href = errorData.redirectUrl;
+          }, 3000);
+          return;
+         }
+
         throw new Error(msg('Comment failed, please try again later'));
       }
 

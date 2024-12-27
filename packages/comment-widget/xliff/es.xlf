@@ -110,6 +110,10 @@
   <source>Click OK to jump to the logout page, Please make sure the content being edited has been saved.</source>
   <target>Haga clic en OK para ir a la página de cierre de sesión, Por favor, asegúrese de que el contenido editado haya sido guardado.</target>
 </trans-unit>
+<trans-unit id="sea7e567ed89dc999">
+  <source>This content is available to paid users only</source>
+  <target>Este contenido está disponible solo para usuarios de pago.</target>
+</trans-unit>
 </body>
 </file>
 </xliff>

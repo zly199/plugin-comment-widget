@@ -110,6 +110,10 @@
   <source>Click OK to jump to the logout page, Please make sure the content being edited has been saved.</source>
   <target>点击确定将跳转至退出登录页面，请确保正在编辑的内容已保存。</target>
 </trans-unit>
+<trans-unit id="sea7e567ed89dc999">
+  <source>This content is available to paid users only</source>
+  <target>該內容僅限付費用戶查看。</target>
+</trans-unit>
 </body>
 </file>
 </xliff>
