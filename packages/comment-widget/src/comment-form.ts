@@ -140,7 +140,7 @@ export class CommentForm extends LitElement {
         // 如果有 redirectUrl，执行跳转
         if (errorData.redirectUrl) {
           //提示没有权限
-          this.toastManager?.warn(msg('This content is available to paid users only'));
+          this.toastManager?.warn(errorData.errorMsg);
           //间隔2s跳转
           setTimeout(() => {
             window.location.href = errorData.redirectUrl;
