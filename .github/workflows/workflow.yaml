@@ -3,7 +3,7 @@ name: Build Plugin JAR File
 on:
   push:
     branches:
-      - main
+      - production
     paths:
       - "**"
       - "!**.md"
@@ -12,7 +12,7 @@ on:
       - created
   pull_request:
     branches:
-      - main
+      - production
     paths:
       - "**"
       - "!**.md"
