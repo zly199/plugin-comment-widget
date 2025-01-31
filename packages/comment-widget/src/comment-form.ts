@@ -141,10 +141,10 @@ export class CommentForm extends LitElement {
         if (errorData.redirectUrl) {
           //提示没有权限
           this.toastManager?.warn(errorData.errorMsg);
-          //间隔2s跳转
-          setTimeout(() => {
-            window.location.href = errorData.redirectUrl;
-          }, 3000);
+          //间隔2s跳转 先不跳转
+          // setTimeout(() => {
+          //   window.location.href = errorData.redirectUrl;
+          // }, 3000);
           return;
          }
 
