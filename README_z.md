@@ -56,3 +56,7 @@ gradlew.bat bootRun --args="--spring.profiles.active=dev,win,local"
 
 在插件列表将能看到插件已经被正确启动，并且在左侧菜单添加了一个 示例分组，其下有一个名 示例页面 的菜单。
 
+### 升级
+gradle ->jar
+
+升级:build->libs->xxx.jar
