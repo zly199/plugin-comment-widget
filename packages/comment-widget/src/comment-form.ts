@@ -138,7 +138,7 @@ export class CommentForm extends LitElement {
         const errorData = await response.json();
         console.log('-----------errorData----------', errorData);
         // 如果有 redirectUrl，执行跳转
-        if (errorData.redirectUrl) {
+        if (errorData.errorMsg) {
           //提示没有权限
           this.toastManager?.warn(errorData.errorMsg);
           //间隔2s跳转 先不跳转
