@@ -22,7 +22,11 @@ dependencies {
     testImplementation 'run.halo.app:api'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-
+configurations.all {
+    resolutionStrategy {
+        force 'net.minidev:json-smart:2.4.10'
+    }
+}
 test {
     useJUnitPlatform()
 }
